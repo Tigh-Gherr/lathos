@@ -16,6 +16,7 @@ type ErrClient struct {
 	code   string
 	title  string
 	detail string
+	meta   map[string]string
 }
 
 func newErrClient(code, detail string) ErrClient {
@@ -23,6 +24,7 @@ func newErrClient(code, detail string) ErrClient {
 		id:     uuid.New().String(),
 		code:   code,
 		detail: detail,
+		meta:   make(map[string]string, 0),
 	}
 }
 
